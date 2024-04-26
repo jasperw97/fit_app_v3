@@ -9,7 +9,7 @@ class GoalsModel(models.Model):
         return self.goal
 
 class User(AbstractUser):
-    email = models.EmailField(unique=True, null=True)
+    email = models.EmailField(unique=False, null=True)
     bio = models.TextField(null=True)
     goal = models.ForeignKey(GoalsModel, on_delete=models.SET_NULL, null=True, blank=True)
 
