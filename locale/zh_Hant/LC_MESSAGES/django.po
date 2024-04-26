@@ -1,0 +1,137 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-26 08:47+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: base/templates/base/feed.html:5 base/templates/base/workout_form.html:12
+#: base/templates/base/workout_form.html:58
+msgid "Goal"
+msgstr "目標"
+
+#: base/templates/base/feed.html:24 base/templates/base/workout_form.html:42
+#: base/templates/base/workout_form.html:87
+#: base/templates/base/workout_form.html:128
+msgid "Load"
+msgstr "重量"
+
+#: base/templates/base/home.html:10 base/templates/base/workout_form.html:99
+msgid "Create Workout"
+msgstr "新增訓練"
+
+#: base/templates/base/home.html:12
+#, fuzzy
+#| msgid "Create Workout"
+msgid "Recommend Workouts"
+msgstr "新增訓練"
+
+#: base/templates/base/login.html:9
+msgid "Username"
+msgstr "使用者名稱"
+
+#: base/templates/base/login.html:13
+msgid "Password"
+msgstr "密碼"
+
+#: base/templates/base/login.html:19
+msgid "Haven't Signed up yet?"
+msgstr "還沒註冊？"
+
+#: base/templates/base/login.html:19
+msgid "Sign up!"
+msgstr "註冊！"
+
+#: base/templates/base/navbar.html:16
+msgid "Home"
+msgstr "首頁"
+
+#: base/templates/base/navbar.html:24
+msgid "My Profile"
+msgstr "個人檔案"
+
+#: base/templates/base/navbar.html:25
+msgid "Edit Profile"
+msgstr "編輯個人資料"
+
+#: base/templates/base/navbar.html:29
+msgid "Logout"
+msgstr "登出"
+
+#: base/templates/base/navbar.html:34 base/templates/base/register.html:12
+msgid "Login"
+msgstr "登入"
+
+#: base/templates/base/navbar.html:40
+msgid "Search"
+msgstr "搜尋"
+
+#: base/templates/base/register.html:9
+msgid "Register"
+msgstr "註冊"
+
+#: base/templates/base/register.html:11
+msgid "Already have an account?"
+msgstr "已經註冊了？"
+
+#: base/templates/base/workout_form.html:8
+#: base/templates/base/workout_form.html:54
+msgid "Title"
+msgstr "訓練標題"
+
+#: base/templates/base/workout_form.html:26
+#: base/templates/base/workout_form.html:71
+#: base/templates/base/workout_form.html:112
+msgid "Exercise Name"
+msgstr "動作名稱"
+
+#: base/templates/base/workout_form.html:37
+#: base/templates/base/workout_form.html:82
+#: base/templates/base/workout_form.html:123
+msgid "Sets"
+msgstr "組數"
+
+#: base/templates/base/workout_form.html:40
+#: base/templates/base/workout_form.html:85
+#: base/templates/base/workout_form.html:126
+msgid "Reps"
+msgstr "次數"
+
+#: base/templates/base/workout_form.html:45
+#: base/templates/base/workout_form.html:90
+#: base/templates/base/workout_form.html:131
+msgid "Description"
+msgstr "補充說明"
+
+#: base/templates/base/workout_form.html:96
+#, fuzzy
+#| msgid "Exercise Name"
+msgid "Add Exercise"
+msgstr "增加動作"
+
+#: base/templates/base/workout_form.html:101
+#, fuzzy
+#| msgid "Create Workout"
+msgid "Update Workout"
+msgstr "更新訓練"
+
+#: fitnessapp/settings.py:128
+msgid "English"
+msgstr ""
+
+#: fitnessapp/settings.py:129
+msgid "Traditional Chinese"
+msgstr ""

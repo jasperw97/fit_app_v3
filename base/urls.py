@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 from django.views.generic import TemplateView
 
+
 app_name = "base"
 urlpatterns = [
     path("", views.HomeView.as_view(), name="home"),

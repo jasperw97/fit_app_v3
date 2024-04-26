@@ -13,25 +13,24 @@ class User(AbstractUser):
     bio = models.TextField(null=True)
     goal = models.ForeignKey(GoalsModel, on_delete=models.SET_NULL, null=True, blank=True)
 
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    
 
     pic = models.ImageField(null=True, default='person.svg')
 
 class LoadModel(models.Model):
-    load = models.FloatField()
+    load = models.FloatField(null=True)
 
     def __str__(self):
         return str(self.load)
 
 class SetsModel(models.Model):
-    sets = models.IntegerField()
+    sets = models.IntegerField(null=True)
 
     def __str__(self):
         return str(self.sets)
 
 class RepsModel(models.Model):
-    reps = models.IntegerField()
+    reps = models.IntegerField(null=True)
 
     def __str__(self):
         return str(self.reps)

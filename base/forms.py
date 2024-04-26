@@ -6,9 +6,15 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout
 
 class RegisterForm(UserCreationForm):
+    def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            for fieldname in ['username', 'password1', 'password2']:
+                self.fields[fieldname].help_text = None
     class Meta:
         model = User
-        fields = ["username", 'email', "first_name", "last_name", 'bio', 'password1', 'password2', 'pic']
+        fields = ["username", 'password1', 'password2']
+        
+
 
 # class WorkoutForm(forms.ModelForm):
 #     class Meta:

@@ -10,6 +10,9 @@ from django.http import HttpResponse
 from django.db.models import Q
 # Create your views here.
 
+def blank_to_none(value):
+    return None if value == "" else value
+
 class LoginPage(View):
     def get(self, request):
         
@@ -19,14 +22,14 @@ class LoginPage(View):
         return render(request, "base/login.html", ctx)
     
     def post(self, request):
-        email = request.POST.get("email").lower()
+        username = request.POST.get("username").lower()
         password = request.POST.get("password")
         try:
-            user = User.objects.get(email=email)
+            user = User.objects.get(username=username)
         except:
             messages.error(request, "User does not exist")
         
-        user = authenticate(request, username=email, password=password)
+        user = authenticate(request, username=username, password=password)
 
         if user is not None:
             login(request, user)
@@ -104,9 +107,9 @@ class CreateWorkout(View):
         for i in range(1, int(exercises)+1):
             
             exercise_name, created = ExerciseList.objects.get_or_create(name=request.POST.get("exercise"+str(i))) 
-            sets, created = SetsModel.objects.get_or_create(sets=request.POST.get("sets"+str(i))) 
-            reps, created = RepsModel.objects.get_or_create(reps=request.POST.get("reps"+str(i)))
-            load, created = LoadModel.objects.get_or_create(load=request.POST.get("load"+str(i)))
+            sets, created = SetsModel.objects.get_or_create(sets=blank_to_none(request.POST.get("sets"+str(i)))) 
+            reps, created = RepsModel.objects.get_or_create(reps=blank_to_none(request.POST.get("reps"+str(i)))) 
+            load, created = LoadModel.objects.get_or_create(load=blank_to_none(request.POST.get("load"+str(i)))) 
             description = request.POST.get("description"+str(i))
             exercise = Exercise.objects.create(name=exercise_name, load=load, sets=sets, reps=reps, description=description)
             workout.exercises.add(exercise)
@@ -143,9 +146,9 @@ class UpdateWorkout(View):
         for i in range(1, int(original_length)+1):
             exercise = workout.exercises.all()[i-1]
             exercise.name, created = ExerciseList.objects.get_or_create(name=request.POST.get("exercise"+str(i)))
-            exercise.sets, created = SetsModel.objects.get_or_create(sets=request.POST.get("sets"+str(i))) 
-            exercise.reps, created = RepsModel.objects.get_or_create(reps=request.POST.get("reps"+str(i)))
-            exercise.load, created = LoadModel.objects.get_or_create(load=request.POST.get("load"+str(i)))
+            exercise.sets, created = SetsModel.objects.get_or_create(sets=blank_to_none(request.POST.get("sets"+str(i)))) 
+            exercise.reps, created = RepsModel.objects.get_or_create(reps=blank_to_none(request.POST.get("reps"+str(i))))
+            exercise.load, created = LoadModel.objects.get_or_create(load=blank_to_none(request.POST.get("load"+str(i))))
             exercise.description = request.POST.get("description"+str(i))
             exercise.save()
         workout.save()  
@@ -154,9 +157,9 @@ class UpdateWorkout(View):
         for i in range(int(original_length)+1, int(exercises)+1):
             
             exercise_name, created = ExerciseList.objects.get_or_create(name=request.POST.get("exercise"+str(i))) 
-            sets, created = SetsModel.objects.get_or_create(sets=request.POST.get("sets"+str(i))) 
-            reps, created = RepsModel.objects.get_or_create(reps=request.POST.get("reps"+str(i)))
-            load, created = LoadModel.objects.get_or_create(load=request.POST.get("load"+str(i)))
+            sets, created = SetsModel.objects.get_or_create(sets=blank_to_none(request.POST.get("sets"+str(i)))) 
+            reps, created = RepsModel.objects.get_or_create(reps=blank_to_none(request.POST.get("reps"+str(i))))
+            load, created = LoadModel.objects.get_or_create(load=blank_to_none(request.POST.get("load"+str(i))))
             description = request.POST.get("description"+str(i))
             exercise = Exercise.objects.create(name=exercise_name, load=load, sets=sets, reps=reps, description=description)
             workout.exercises.add(exercise)

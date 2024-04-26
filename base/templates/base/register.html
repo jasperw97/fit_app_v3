@@ -1,12 +1,15 @@
 {% extends 'main.html' %} {% block content %}
 {% load crispy_forms_tags %}
+{% load i18n %}
 <div>
   <form action="" method="post">
-    {% csrf_token %} {{form|crispy}}
+    {% csrf_token %} 
+    {{form|crispy}}
 
-    <input type="submit" value="Register" />
+    <input type="submit" class="btn btn-success my2" value="{% translate 'Register' %}" />
   </form>
-  <p>Already have an account?</p>
-  <a href="{% url 'base:login' %}">Login</a>
+  <p>{% translate "Already have an account?" %}
+  <a href="{% url 'base:login' %}" class="btn btn-small btn-info text-sm">{% translate "Login" %}</a>
+  </p>
 </div>
 {% endblock %}
